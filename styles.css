@@ -261,7 +261,19 @@ section {
 	text-transform: uppercase;
 }
 
+.form-elements-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 2rem;
+	align-items: center;
+	justify-content: center;
+}
 .form-container {
+	width: 100%;
+}
+
+.input-fields-container {
 	width: 100%;
 }
 
@@ -281,4 +293,9 @@ select {
 select:focus {
 	outline: none;
 	border-bottom-color: var(--primary-color);
+}
+
+.form-elements-wrapper p {
+	font-size: 0.8rem;
+	max-width: 60%;
 }
