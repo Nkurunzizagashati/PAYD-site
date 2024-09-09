@@ -299,3 +299,63 @@ select:focus {
 	font-size: 0.8rem;
 	max-width: 60%;
 }
+
+form button {
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--border-color);
+	text-transform: uppercase;
+	font-family: 'Reggae One', 'sans-serif';
+}
+
+/* FOOTER */
+
+footer {
+	padding: 0 1rem;
+}
+
+.footer-contents-wrapper {
+	padding: 2rem;
+	border-top: 1px solid var(--border-color);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.footer-contents-wrapper ul {
+	display: flex;
+	gap: 1rem;
+}
+
+footer a {
+	text-decoration: none;
+	color: var(--primary-color);
+	text-transform: uppercase;
+	font-size: 0.8rem;
+}
+
+footer li {
+	list-style: none;
+}
+
+.social-icon {
+	font-size: 1.5rem;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+	.custom-line {
+		display: none;
+	}
+	.hero-section-main-content-wrapper {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero.info-title {
+		display: flex;
+		flex-direction: column;
+	}
+}
