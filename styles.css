@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--primary-color: #625548;
+	--black-color: #000000;
+	--surface-color: #eeedeb;
+	--border-color: gray;
+}
+
+body {
+	background-color: var(--surface-color);
+	font-family: 'Reggae One', 'sans-serif';
+	color: var(--primary-color);
+}
+
+/* MAIN */
+
+main {
+	padding: 1rem;
+}
+/* HEADER */
+
+.header {
+	padding: 2rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: var(--surface-color);
+}
+
+.logo {
+	width: 3rem;
+}
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	z-index: 999;
+}
+
+nav ul {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.nav-link {
+	list-style: none;
+}
+
+.nav-link a {
+	text-decoration: none;
+	color: #444;
+	font-size: 1.5rem;
+	font-weight: 100;
+}
+
+.custom-line {
+	height: 1px;
+	align-self: center;
+	background-color: var(--border-color);
+}
+
+.custom-line.long {
+	width: 40%;
+}
+
+.custom-line.short {
+	width: 4%;
+}
+
+/* SECTION */
+
+section {
+	min-height: 100vh;
+	text-align: center;
+	padding-top: 6rem;
+}
+
+/* HERO SECTION */
+
+.hero-section {
+	padding-top: 8rem;
+	display: flex;
+	flex-direction: column;
+	gap: 6rem;
+	text-transform: uppercase;
+	padding-bottom: 6rem;
+}
+
+.hero-section-main-content-wrapper {
+	display: flex;
+	width: 100%;
+}
+
+.hero.text-wrapper {
+	width: 30%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	text-transform: uppercase;
+}
+
+.hero.text-wrapper div {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 1rem 1rem 0.3rem 1rem;
+}
+
+.hero-btn {
+	padding: 0.5rem 0.2rem;
+	border: 1px solid var(--border-color);
+}
+
+.hero-btn:hover {
+	cursor: pointer;
+}
+
+.hero.image-wrapper {
+	width: 70%;
+}
+
+.profile-photo {
+	width: 100%;
+	object-fit: cover;
+	max-height: 600px;
+}
+
+.hero-section-info-container {
+	width: 100%;
+	padding: 0 0 0 1rem;
+	font-size: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.hero.info-title {
+	display: flex;
+	justify-content: space-between;
+}
+
+.hero.custom-line {
+	height: 1px;
+	background-color: var(--border-color);
+	width: 74%;
+}
+
+.hero.info {
+	display: flex;
+	justify-content: space-between;
+}
+
+.hero.info-card {
+	width: 32%;
+	border: 1px solid var(--border-color);
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	transition: 300ms ease;
+}
+
+.hero.info-card:hover {
+	cursor: pointer;
+}
+
+.hero.info-card img {
+	width: 70%;
+}
+
+.info-card .hero-btn {
+	padding: 0.5rem 1rem;
+}
+
+/* TOUR DATES SECTION */
+
+.tour-dates-section {
+	min-height: 70vh;
+}
+
+.tour-dates-section {
+	background-color: white;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	gap: 3rem;
+}
+
+.tour-dates.title-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40%;
+	font-size: 2rem;
+	line-height: 3rem;
+	letter-spacing: -0.2rem;
+	word-spacing: -0.3rem;
+}
+
+.tour-dates.buttons-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.tour-dates-btn {
+	padding: 0.5rem 0.5rem;
+	border: 1px solid var(--border-color);
+	width: 100%;
+	font-size: 1.2rem;
+}
+
+.tour-dates-btn:hover {
+	cursor: pointer;
+}
+
+/* DIRECTED PROJECTS */
+
+.directed-projects-section {
+	min-height: 50vh;
+}
+
+.directed-projects-section h2 {
+	text-transform: uppercase;
+}
+
+.videos-container {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+/* CONTACT SECTION */
+
+.contact-section {
+	min-height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+}
+
+.contact-section h2 {
+	text-transform: uppercase;
+}
+
+.form-container {
+	width: 100%;
+}
+
+.input-fields-container input,
+select {
+	width: 30%;
+	border: none;
+	border-bottom: 1px solid var(--border-color);
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Reggae One', 'sans-serif';
+	font-weight: 300;
+	background-color: var(--surface-color);
+}
+
+.input-fields-container input:focus,
+select:focus {
+	outline: none;
+	border-bottom-color: var(--primary-color);
+}
