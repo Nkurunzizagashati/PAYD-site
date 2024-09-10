@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 		{
 			imgSrc: './assets/book.jpg',
-			title: 'The Tortured Poets Department CD + Bonus Track “The Manuscript”',
+			title: 'The Tortured Poets Department Vinyl + Bonus Track “The Manuscript”',
 			buttonText: 'Buy',
 		},
 		{

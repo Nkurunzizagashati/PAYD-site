@@ -28,12 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const smallScreens = window.matchMedia('(max-width: 768px)');
 	const ipadScreens = window.matchMedia('(max-width: 1024px)');
+	const smallLaptops = window.matchMedia('(max-width: 1280px)');
 
 	if (smallScreens.matches) {
 		numberOfVideosToShow = 1;
 		videoWidth = '300';
 	} else if (ipadScreens.matches) {
 		numberOfVideosToShow = 2;
+		videoWidth = '350';
+	} else if (smallLaptops.matches) {
 		videoWidth = '350';
 	}
 

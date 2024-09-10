@@ -392,10 +392,6 @@ footer li {
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
-	.custom-line {
-		display: none;
-	}
-
 	/* HEADER */
 
 	.header {
@@ -558,5 +554,176 @@ footer li {
 
 	.footer-text {
 		text-align: end;
+	}
+}
+
+/* IPADS SCREENS */
+
+@media screen and (min-with: 768px) and (max-width: 1050px) {
+	.custom-line {
+		display: none;
+	}
+
+	/* HEADER */
+
+	/* HERO SECTION */
+
+	/*  */
+}
+
+/* SMALL LAPTOPS */
+
+@media screen and (min-width: 1110px) and (min-width: 1280px) {
+	/* HEADER */
+
+	.header a {
+		font-size: 1.3rem;
+	}
+
+	/* HERO SECTION */
+
+	.hero.image-wrapper {
+		width: 60%;
+	}
+
+	.hero.image-wrapper img {
+		max-height: 500px;
+	}
+
+	.hero.text-wrapper {
+		width: 40%;
+	}
+
+	.hero.custom-line {
+		width: 60%;
+	}
+
+	/* CONTACT SECTION */
+
+	.contact-section h2 {
+		font-size: 3rem;
+	}
+
+	.input-fields-container {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.input-fields-container input,
+	select {
+		width: 50%;
+	}
+
+	.form-elements-wrapper p {
+		max-width: 80%;
+		font-size: 1rem;
+	}
+
+	.form-elements-wrapper button {
+		font-size: 1.5rem;
+	}
+
+	/* FOOTER */
+
+	.footer-contents-wrapper {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 1rem;
+	}
+
+	.footer-contents-wrapper ul:nth-child(1) {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		font-size: 1.4rem;
+		padding: 0 2rem;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1110px) {
+	/* HEADER */
+
+	.header a {
+		font-size: 1.4rem;
+	}
+
+	/* HERO SECTION */
+
+	.hero-section-main-content-wrapper {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	.hero.image-wrapper {
+		width: 100%;
+	}
+
+	.hero.image-wrapper img {
+		max-height: 500px;
+	}
+
+	.hero.text-wrapper {
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero.info-title {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero.info {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+	}
+
+	.hero.info-card {
+		width: 40%;
+	}
+
+	/* CONTACT SECTION */
+
+	.contact-section h2 {
+		font-size: 2rem;
+	}
+
+	.input-fields-container {
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	.input-fields-container input,
+	select {
+		width: 50%;
+	}
+
+	.form-elements-wrapper p {
+		max-width: 80%;
+		font-size: 1rem;
+	}
+
+	.form-elements-wrapper button {
+		font-size: 1.5rem;
+	}
+
+	/* FOOTER */
+
+	.footer-contents-wrapper {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 1rem;
+	}
+
+	.footer-contents-wrapper ul:nth-child(1) {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		font-size: 1.4rem;
+		padding: 0 2rem;
 	}
 }
