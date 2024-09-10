@@ -247,25 +247,6 @@ section {
 	gap: 0.5rem;
 }
 
-.video-wrapper {
-	width: 30%; /* Set the wrapper to 30% width */
-	max-width: 30%; /* Ensure it doesn't exceed 30% of its container */
-	position: relative;
-	padding-bottom: 20%; /* Aspect ratio for 16:9 videos */
-	height: 0;
-	overflow: hidden;
-	z-index: 1;
-}
-
-.video-wrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%; /* Full width of the parent container (30%) */
-	height: 100%; /* Full height based on the aspect ratio */
-	z-index: 1;
-}
-
 /* CONTACT SECTION */
 
 .contact-section {
@@ -395,15 +376,6 @@ footer li {
 		gap: 0.5rem;
 		align-items: center;
 		justify-content: center;
-	}
-
-	.video-wrapper {
-		width: 90%; /* Set the wrapper to 30% width */
-		max-width: 90%; /* Ensure it doesn't exceed 30% of its container */
-		position: relative;
-		padding-bottom: 56.25%; /* Aspect ratio for 16:9 videos */
-		height: 0;
-		overflow: hidden;
 	}
 
 	.footer-contents-wrapper {
