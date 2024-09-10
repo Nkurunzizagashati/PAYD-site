@@ -404,6 +404,12 @@ footer li {
 
 	.header-small-screen {
 		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.header-small-screen-nav {
+		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		position: fixed;
@@ -413,6 +419,38 @@ footer li {
 		z-index: 1000;
 		background-color: var(--surface-color);
 		padding: 2rem;
+	}
+
+	.ofScreen-menu {
+		display: none;
+		flex-direction: column;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		max-width: 100%;
+	}
+
+	.ofScreen-menu.active {
+		display: flex;
+		background-color: var(--surface-color);
+		z-index: 999;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 2rem;
+		gap: 6rem;
+	}
+
+	.ofScreen-menu ul {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.inactive {
+		display: none;
 	}
 
 	.fa-bars {

@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+	const hamburgerMenu = document.querySelector('.fa-bars');
+	const navBar = document.getElementById('nav-bar');
+
+	const navBarHeader = document.querySelector(
+		'.header-small-screen-nav'
+	);
+	// Event listener for hamburger menu click
+	hamburgerMenu.addEventListener('click', () => {
+		navBar.classList.toggle('active');
+		navBarHeader.classList.add('inactive');
+	});
+
+	document.addEventListener('click', (event) => {
+		if (
+			!navBar.contains(event.target) &&
+			!hamburgerMenu.contains(event.target)
+		) {
+			navBar.classList.remove('active');
+			navBarHeader.classList.remove('inactive');
+		}
+	});
+
 	// ===================================================================================
 
 	// INFO CARDS
