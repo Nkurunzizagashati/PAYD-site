@@ -33,6 +33,7 @@ main {
 	left: 0;
 	right: 0;
 	background-color: var(--surface-color);
+	z-index: 1000;
 }
 
 .logo {
@@ -42,14 +43,12 @@ nav {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	z-index: 10;
 }
 
 nav ul {
 	display: flex;
 	justify-content: space-between;
 	gap: 1rem;
-	z-index: 1;
 }
 
 .nav-link {
@@ -239,12 +238,39 @@ section {
 
 .directed-projects-section h2 {
 	text-transform: uppercase;
+	margin-bottom: 2rem;
 }
 
 .videos-container {
 	display: flex;
 	justify-content: center;
 	gap: 0.5rem;
+	position: relative;
+}
+
+.video-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.fa-less-than {
+	font-size: 1.5rem;
+	cursor: pointer;
+	position: absolute;
+	left: 8rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.fa-greater-than {
+	font-size: 1.5rem;
+	cursor: pointer;
+	position: absolute;
+	right: 8rem;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 /* CONTACT SECTION */
