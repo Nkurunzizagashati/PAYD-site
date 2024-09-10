@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const hamburgerMenu = document.querySelector('.fa-bars');
 	const navBar = document.getElementById('nav-bar');
+	const navLinks = document.querySelectorAll('.nav-link');
 
 	const navBarHeader = document.querySelector(
 		'.header-small-screen-nav'
@@ -19,6 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			navBar.classList.remove('active');
 			navBarHeader.classList.remove('inactive');
 		}
+	});
+
+	navLinks.forEach((link) => {
+		link.addEventListener('click', () => {
+			navBar.classList.remove('active');
+			navBarHeader.classList.remove('inactive');
+		});
 	});
 
 	// ===================================================================================

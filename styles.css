@@ -13,6 +13,10 @@
 	--border-color: gray;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-color: var(--surface-color);
 	font-family: 'Reggae One', 'sans-serif';
