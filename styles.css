@@ -76,6 +76,10 @@ nav ul {
 	width: 4%;
 }
 
+.header-small-screen {
+	display: none;
+}
+
 /* SECTION */
 
 section {
@@ -157,6 +161,7 @@ section {
 .hero.info {
 	display: flex;
 	justify-content: space-between;
+	position: relative;
 }
 
 .hero.info-card {
@@ -260,7 +265,15 @@ section {
 	font-size: 1.5rem;
 	cursor: pointer;
 	position: absolute;
-	left: 8rem;
+	left: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.fa-arrow-left {
+	font-size: 1.5rem;
+	cursor: pointer;
+	position: absolute;
+	left: 1rem;
 	top: 50%;
 	transform: translateY(-50%);
 }
@@ -268,7 +281,15 @@ section {
 	font-size: 1.5rem;
 	cursor: pointer;
 	position: absolute;
-	right: 8rem;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.fa-arrow-right {
+	font-size: 1.5rem;
+	cursor: pointer;
+	position: absolute;
+	right: 1rem;
 	top: 50%;
 	transform: translateY(-50%);
 }
@@ -374,11 +395,41 @@ footer li {
 	.custom-line {
 		display: none;
 	}
+
+	/* HEADER */
+
+	.header {
+		display: none;
+	}
+
+	.header-small-screen {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+		background-color: var(--surface-color);
+		padding: 2rem;
+	}
+
+	.fa-bars {
+		font-size: 2rem;
+	}
+
+	/* HERO SECTION */
+
 	.hero-section-main-content-wrapper {
 		display: flex;
 		flex-direction: column-reverse;
 		align-items: center;
 		justify-content: center;
+	}
+
+	.hero.hero.text-wrapper {
+		width: 100%;
 	}
 
 	.hero.info-title {
@@ -402,6 +453,46 @@ footer li {
 		gap: 0.5rem;
 		align-items: center;
 		justify-content: center;
+	}
+
+	.fa-less-than {
+		top: 110%;
+		left: 1rem;
+	}
+	.fa-arrow-left {
+		top: 110%;
+		left: 1rem;
+	}
+
+	.fa-greater-than {
+		top: 110%;
+		right: 1rem;
+	}
+	.fa-arrow-right {
+		top: 110%;
+		right: 1rem;
+	}
+
+	/* CONTACT SECTION */
+
+	.contact-section {
+		gap: 0.5rem;
+		margin-top: 3rem;
+	}
+
+	.input-fields-container {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.input-fields-container input,
+	select {
+		width: 100%;
+	}
+
+	.form-elements-wrapper p {
+		max-width: 100%;
 	}
 
 	.footer-contents-wrapper {

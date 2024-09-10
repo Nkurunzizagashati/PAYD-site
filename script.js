@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			// Populate the dropdown with country names and codes
 			countries.forEach((country) => {
 				const option = document.createElement('option');
-				option.value = country.cca2; // Use country code as the value
-				option.textContent = country.name.common; // Display country name
+				option.value = country.cca2;
+				option.textContent = country.name.common;
 				dropdown.appendChild(option);
 			});
 		})
@@ -22,9 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
 			console.error('Error fetching countries:', error);
 		});
 
-	// Show some of the list in the directed projects
-
 	let startingIndex = 0;
+	let numberOfVideosToShow = 3;
+	let videoWidth = '450';
+
+	const smallScreens = window.matchMedia('(max-width: 768px)');
+	const ipadScreens = window.matchMedia('(max-width: 1024px)');
+
+	if (smallScreens.matches) {
+		numberOfVideosToShow = 1;
+		videoWidth = '300';
+	} else if (ipadScreens.matches) {
+		numberOfVideosToShow = 2;
+		videoWidth = '350';
+	}
 
 	const videos = [
 		{
@@ -33,41 +44,97 @@ document.addEventListener('DOMContentLoaded', () => {
 			url: 'https://www.youtube.com/embed/CLQ5TSQlA08?si=eQ0sNCoOyl_oIUbp',
 		},
 		{
-			title: 'Fortnight (feat Post Malone)',
+			title: 'Sikosa (feat Post Malone)',
 			description: 'Description of Video 2',
 			url: 'https://www.youtube.com/embed/CLQ5TSQlA08?si=eQ0sNCoOyl_oIUbp',
 		},
 		{
-			title: 'Fortnight (feat Post Malone)',
+			title: 'Byakubaho (feat Post Malone)',
 			description: 'Description of Video 3',
+			url: 'https://www.youtube.com/embed/CLQ5TSQlA08?si=eQ0sNCoOyl_oIUbp',
+		},
+		{
+			title: 'Eden (feat Post Malone)',
+			description: 'Description of Video 4',
+			url: 'https://www.youtube.com/embed/CLQ5TSQlA08?si=eQ0sNCoOyl_oIUbp',
+		},
+		{
+			title: 'Byukuri (feat Post Malone)',
+			description: 'Description of Video 5',
+			url: 'https://www.youtube.com/embed/CLQ5TSQlA08?si=eQ0sNCoOyl_oIUbp',
+		},
+		{
+			title: 'Byakubaho (feat Post Malone)',
+			description: 'Description of Video 6',
 			url: 'https://www.youtube.com/embed/CLQ5TSQlA08?si=eQ0sNCoOyl_oIUbp',
 		},
 	];
 
-	// Get the container where videos will be appended
-	const videosContainer =
-		document.getElementsByClassName('videos-container')[0];
+	const videosContainer = document.querySelector('.videos-container');
 
-	// Loop through the first three videos and append them
-	videos.slice(0, 3).forEach((video) => {
-		// Create a div to wrap each video
-		const videoDiv = document.createElement('div');
-		videoDiv.classList.add('video-wrapper');
+	// Function to update the displayed videos without removing icons
+	const updateDisplayedVideos = () => {
+		// Clear only the video elements, keep the icons
+		const videoWrappers =
+			videosContainer.querySelectorAll('.video-wrapper');
+		videoWrappers.forEach((wrapper) => wrapper.remove());
 
-		// Create an iframe element
-		const iframe = document.createElement('iframe');
-		iframe.src = video.url;
-		iframe.width = '350';
-		iframe.height = '315';
-		iframe.allowFullscreen = true;
+		// Get the slice of videos to display
+		videos
+			.slice(startingIndex, startingIndex + numberOfVideosToShow)
+			.forEach((video) => {
+				const videoDiv = document.createElement('div');
+				videoDiv.classList.add('video-wrapper');
 
-		// Append the iframe to the video div
-		videoDiv.appendChild(iframe);
+				const iframe = document.createElement('iframe');
+				iframe.src = video.url;
+				iframe.width = videoWidth;
+				iframe.height = '315';
+				iframe.allowFullscreen = true;
 
-		// Optionally, create title and description elements
-		const title = document.createElement('p');
-		title.textContent = video.title;
-		videoDiv.appendChild(title);
-		videosContainer.appendChild(videoDiv);
+				videoDiv.appendChild(iframe);
+
+				const title = document.createElement('p');
+				title.textContent = video.title;
+				videoDiv.appendChild(title);
+
+				// Append the video div between the icons
+				videosContainer.insertBefore(
+					videoDiv,
+					document.querySelector('.fa-greater-than')
+				);
+			});
+
+		console.log('UPDATING');
+	};
+
+	// Initial video display
+	updateDisplayedVideos();
+
+	const nextVideo = document.querySelector('.video-next');
+	const prevVideo = document.querySelector('.video-prev');
+
+	nextVideo.addEventListener('click', () => {
+		startingIndex += numberOfVideosToShow;
+
+		if (startingIndex >= videos.length) {
+			startingIndex = 0;
+		}
+
+		updateDisplayedVideos();
+	});
+
+	// Click event listener for sliding the videos to the left
+	prevVideo.addEventListener('click', () => {
+		// Decrement the starting index based on screen size
+		startingIndex -= numberOfVideosToShow;
+
+		// Loop back to the end if we go below 0
+		if (startingIndex < 0) {
+			startingIndex = videos.length - numberOfVideosToShow;
+		}
+
+		// Update the displayed videos
+		updateDisplayedVideos();
 	});
 });
