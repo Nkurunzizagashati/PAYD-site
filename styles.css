@@ -66,6 +66,10 @@ nav ul {
 	font-weight: 100;
 }
 
+.nav-link a:hover {
+	font-weight: bold;
+}
+
 .custom-line {
 	height: 1px;
 	align-self: center;
