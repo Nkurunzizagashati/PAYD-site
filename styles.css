@@ -355,6 +355,33 @@ form button {
 	font-family: 'Reggae One', 'sans-serif';
 }
 
+/* WAIT */
+
+.contact-section h2 {
+	font-size: 2.5rem;
+}
+
+.input-fields-container {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.input-fields-container input,
+select {
+	width: 40%;
+}
+
+.form-elements-wrapper p {
+	max-width: 80%;
+	font-size: 1rem;
+}
+
+.form-elements-wrapper button {
+	font-size: 1.5rem;
+}
+
 /* FOOTER */
 
 footer {
@@ -559,7 +586,7 @@ footer li {
 
 /* IPADS SCREENS */
 
-@media screen and (min-with: 768px) and (max-width: 1050px) {
+@media screen and (min-width: 768px) and (max-width: 1050px) {
 	.custom-line {
 		display: none;
 	}
@@ -573,7 +600,7 @@ footer li {
 
 /* SMALL LAPTOPS */
 
-@media screen and (min-width: 1110px) and (min-width: 1280px) {
+@media screen and (min-width: 1110px) and (max-width: 1280px) {
 	/* HEADER */
 
 	.header a {
